@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Gestion des congés</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>Gestion des congés</h1>
+    <section>
+      <h2>Nouvelle demande</h2>
+      <form id="congeForm">
+        <div class="form-group">
+          <label for="nom">Nom :</label>
+          <input type="text" id="nom" required>
+        </div>
+        <div class="form-group">
+          <label for="dateDebut">Date de début :</label>
+          <input type="date" id="dateDebut" required>
+        </div>
+        <div class="form-group">
+          <label for="dateFin">Date de fin :</label>
+          <input type="date" id="dateFin" required>
+        </div>
+        <div class="form-group">
+          <label for="motif">Motif :</label>
+          <textarea id="motif"></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Historique des demandes</h2>
+      <table id="requestsTable">
+        <thead>
+          <tr><th>Nom</th><th>Début</th><th>Fin</th><th>Motif</th><th>Statut</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Statistiques</h2>
+      <div id="stats">
+        <p>Total : <span id="total">0</span></p>
+        <p>En attente : <span id="pending">0</span></p>
+        <p>Approuvées : <span id="approved">0</span></p>
+        <p>Refusées : <span id="rejected">0</span></p>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
